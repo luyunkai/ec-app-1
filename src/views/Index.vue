@@ -1,7 +1,7 @@
 <template>
   <div class="index">
     <!-- 轮播图 -->
-    <cube-slide ref="slide" :data="items" @change="changePage">
+    <cube-slide ref="slide" :data="items">
       <cube-slide-item
         v-for="(item, index) in items"
         :key="index"
@@ -13,12 +13,7 @@
       </cube-slide-item>
     </cube-slide>
     <!-- 滚动分类 -->
-    <cube-slide
-      :auto-play="false"
-      ref="slidelists"
-      :data="lists"
-      @change="changePage"
-    >
+    <cube-slide :auto-play="false" ref="slidelists" :data="lists">
       <cube-slide-item v-for="(list, index) in lists" :key="index">
         <ul class="listUl">
           <li class="listLi" v-for="(item, index) in list" :key="index">
@@ -41,14 +36,7 @@ export default {
       lists: [], //滚动分类数组
     };
   },
-  methods: {
-    changePage(current) {
-      console.log("当前轮播图序号为:" + current);
-    },
-    clickHandler(item, index) {
-      console.log(item, index);
-    },
-  },
+
   async created() {
     try {
       //获取轮播图数据

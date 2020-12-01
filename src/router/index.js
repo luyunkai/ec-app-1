@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    redirect : '/login'
+    redirect : '/botnav/index'
   },
   {
     path: '/login',
@@ -39,11 +39,15 @@ const routes = [
         path: 'cart',
         component: () => import('../views/Cart.vue')
       },
+      // {
+      //   path: 'noLogin',
+      //   component: () => import('../views/NoLogin.vue')
+      // },
       {
         path: 'mine',
-        meta:{
-          requireAuth:true
-        },
+        // meta:{
+        //   requireAuth:true
+        // },
         component: () => import('../views/Mine.vue')
       },
     ]

@@ -10,21 +10,21 @@ setAxios()
 Vue.config.productionTip = false
 Vue.prototype.$http = axios
 //路由守卫
-router.beforeEach((to,from,next)=>{
-  store.commit('setToken',localStorage.getItem('token'))
-  if (to.meta.requireAuth) {
-    if (store.state.token) {
-      next()
-    }else{
-      next({
-        path:'/login',
-        query:{redirect:to.fullPath}
-      })
-    }
-  }else{
-    next()
-  }
-})
+// router.beforeEach((to,from,next)=>{
+//   store.commit('setToken',localStorage.getItem('token'))
+//   if (to.meta.requireAuth) {
+//     if (store.state.token) {
+//       next()
+//     }else{
+//       next({
+//         path:'/botnav/noLogin',
+//         query:{redirect:to.fullPath}
+//       })
+//     }
+//   }else{
+//     next()
+//   }
+// })
 new Vue({
   router,
   store,
