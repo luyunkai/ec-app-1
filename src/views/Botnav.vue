@@ -5,7 +5,6 @@
       class="botnav"
       v-model="selectedLabelDefault"
       :data="tabs"
-      @click="clickHandler"
       @change="changeHandler"
     >
     </cube-tab-bar>
@@ -41,10 +40,7 @@ export default {
     };
   },
   methods: {
-    clickHandler(label) {
-      // if you clicked home tab, then print 'Home'
-      console.log(label);
-    },
+  
     changeHandler(label) {
       // if you clicked different tab, this methods can be emitted
       switch (label) {

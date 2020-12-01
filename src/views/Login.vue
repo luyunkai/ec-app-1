@@ -83,12 +83,7 @@ export default {
         if (result.code === 0) {
           this.$store.commit("setToken", result.token);
           window.localStorage.setItem("token", result.token);
-          //判断路由是否带参,带参就去到重定向地址,否则就去首页
-          if (this.$route.query.redirect) {
-            this.$router.replace({ path: this.$route.query.redirect });
-          } else {
-            this.$router.replace({ path: "/botnav/index" });
-          }
+          this.$router.replace({ path: "/botnav/index" });
         }
       } catch (err) {
         console.log(err);
