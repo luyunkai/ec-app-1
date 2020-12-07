@@ -36,7 +36,7 @@ export default {
       lists: [], //滚动分类数组
     };
   },
-
+ 
   async created() {
     try {
       //获取轮播图数据
